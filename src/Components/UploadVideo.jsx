@@ -15,18 +15,17 @@ export default function UploadVideo() {
   };
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 lg:p-10 bg-neutral-950 text-white">
+    <div className="min-h-screen w-full p-4 sm:p-6 lg:p-10 bg-neutral-950 text-white">
       <h1 className="text-2xl font-semibold mb-6">Upload Video</h1>
 
       {/* Upload Box */}
       <div
         className={`relative border-2 border-dashed rounded-2xl p-8
         transition-all duration-300
-        ${
-          dragActive
+        ${dragActive
             ? "border-cyan-400 bg-cyan-400/10"
             : "border-white/20 bg-white/5"
-        }`}
+          }`}
         onDragOver={(e) => {
           e.preventDefault();
           setDragActive(true);
@@ -88,11 +87,10 @@ export default function UploadVideo() {
       <button
         disabled={!video}
         className={`mt-6 w-full sm:w-auto px-8 py-3 rounded-xl font-medium transition
-        ${
-          video
+        ${video
             ? "bg-gradient-to-r from-cyan-500 to-blue-600 hover:opacity-90"
             : "bg-white/10 text-white/40 cursor-not-allowed"
-        }`}
+          }`}
         onClick={() => {
           // Backend upload logic goes here
           console.log("Uploading:", video);
